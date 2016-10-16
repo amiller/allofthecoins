@@ -1,0 +1,15 @@
+useful commands:
+```
+docker build -t allofthecoins:ethereum ./
+docker run --name ethereum -itd allofthecoins:ethereum
+docker exec -it ethereum ./build/bin/geth --exec admin.peers attach
+docker exec -it ethereum ./build/bin/geth --exec admin.nodeInfo attach
+docker exec -it tail -F /root/.ethereum/debug.log
+```
+
+Runs the ethereum node, listens of port 30303 on the host
+
+```
+docker run --name ethereum -itd -p 30303:30303 -v ethereumd-data:/root/.ethereum allofthecoins:ethereum
+```
+
