@@ -1,0 +1,14 @@
+useful commands:
+```
+docker build -t allofthecoins:litecoin ./
+docker run --name litecoin -itd allofthecoins:litecoin
+docker exec -it ./src/litecoin-cli getinfo
+docker exec -it tail -F /root/.litecoin/debug.log
+```
+
+
+Runs the litecoin node, listens of port 9333 on the host, listens for local RPC connections on 9332
+
+```
+docker run --name litecoin -itd -p 9333:9333 -p 127.0.0.1:9332:9332 -v litecoind-data:/root/.litecoin allofthecoins:litecoin
+```
