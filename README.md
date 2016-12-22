@@ -19,9 +19,9 @@ docker build -t allofthecoins:bitcoin .
 
 After the image is built run with:
 ```shell
-docker run -d --name bitcoin allofthecoins:bitcoin
+docker run -d -p 8333 --name bitcoin allofthecoins:bitcoin
 ```
-You have to look up the ports that each client needs.
+Without specifically exposing the the rpc port with `-p 8332` the rpc interface is only available for the host and for other docker containers.
 
 Bitcoin uses `8333`, `8332`. Bitcoin testnet uses `18333`, `18332`.
 
