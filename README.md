@@ -19,7 +19,7 @@ docker build -t allofthecoins:bitcoin .
 
 After the image is built run with:
 ```shell
-docker run -d -p 8333 -p 8332 --name bitcoin allofthecoins:bitcoin
+docker run -d --name bitcoin allofthecoins:bitcoin
 ```
 You have to look up the ports that each client needs.
 
