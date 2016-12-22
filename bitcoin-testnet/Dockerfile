@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-RUN apt-get update && apt-get install -qy git
+RUN apt-get update && apt-get install -qy git 
 RUN apt-get install -qy build-essential
 RUN apt-get install -qy libboost-all-dev
 RUN apt-get install -qy libssl-dev libdb++-dev libdb-dev libminiupnpc-dev
@@ -14,8 +14,8 @@ RUN ./autogen.sh
 RUN ./configure --with-incompatible-bdb
 RUN make
 
-EXPOSE 8333
+EXPOSE 18333
 VOLUME /root/.bitcoin
 
 ADD bitcoin.conf /root/.bitcoin/bitcoin.conf
-CMD ./src/bitcoind -debug
+CMD ./src/bitcoind -server -debug -testnet
