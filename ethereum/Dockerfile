@@ -5,8 +5,8 @@ RUN apt-get install -qy build-essential
 RUN apt-get install -qy git libgmp3-dev wget
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN wget https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz
-RUN tar -C /usr/local -xzf go1.4.2.linux-amd64.tar.gz
+RUN wget https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf go1.8.linux-amd64.tar.gz
 
 RUN mkdir -p /root/go
 ENV PATH $PATH:/usr/local/go/bin
