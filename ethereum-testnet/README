@@ -1,10 +1,10 @@
 useful commands:
 ```
 docker build -t allofthecoins:ethereum-morden ./
-docker run --name ethereum -itd allofthecoins:ethereum-morden
+docker run --name ethereum-morden -itd allofthecoins:ethereum-morden
 docker exec -it ethereum-morden ./build/bin/geth --testnet --exec admin.peers attach ipc://root/.ethereum/testnet/geth.ipc
 docker exec -it ethereum-morden ./build/bin/geth --testnet --exec admin.nodeInfo attach ipc://root/.ethereum/testnet/geth.ipc
-docker exec -it tail -F /root/.ethereum/testnet/debug.log
+docker exec -it ethereum-morden tail -F /root/.ethereum/testnet/debug.log
 ```
 
 Runs the ethereum node (in the Morden testnet)
